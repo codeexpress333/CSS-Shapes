@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #168ad8;
+}
+
+.container {
+    margin: 100px 50px;
+}
+
+.container .shape,
+.container .shape2 {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Heart Shape */
+.heart {
+    position: relative;
+}
+
+.heart::before,
+.heart::after {
+    position: absolute;
+    content: '';
+    left: 70px;
+    top: 0;
+    width: 70px;
+    height: 115px;
+    background: #bd0909;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.heart::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+/* biohazard */
+.biohazard {
+    margin-left: 120px;
+    width: 0;
+    height: 0;
+    border-bottom: 60px solid #000;
+    border-top: 60px solid #000;
+    border-left: 60px solid #f7fb08;
+    border-right: 60px solid #f7fb08;
+    border-radius: 60px;
+}
+
+/* pacman */
+.pacman {
+    width: 0;
+    height: 0;
+    border-right: 60px solid transparent;
+    border-top: 60px solid #000;
+    border-left: 60px solid #000;
+    border-bottom: 60px solid #000;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+}
+
+/* egg */
+.egg {
+    display: block;
+    margin-top: 50px;
+    width: 126px;
+    height: 180px;
+    background: #fff;
+    border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
+}
+
+/* six-star */
+.six-star {
+    position: absolute;
+    width: 0;
+    height: 0;
+    margin: 80px 420px;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 80px solid #3700ff;
+}
+
+.six-star::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 80px solid #3700ff;
+    margin: 30px 0 0 -50px;
+}
+
+/* corner */
+.corner {
+    height: 100px;
+    width: 100px;
+    margin: 80px -420px;
+    background: #bd0909;
+    position: absolute;
+}
+
+.corner::before {
+    content: '';
+    height: 100px;
+    width: 100px;
+    background: #60bd09;
+    transform: rotate(30deg);
+    position: absolute;
+}
+
+.corner::after {
+    height: 100px;
+    width: 100px;
+    background: #bd0909;
+    content: '';
+    position: absolute;
+    transform: rotate(-30deg);
+}
+
+
+/* Media Query */
+@media (max-width: 1000px) {
+    .corner {
+        margin: 80px -140px;
+    }
+    .six-star {
+        margin: 80px 130px;
+    }
+}
+
